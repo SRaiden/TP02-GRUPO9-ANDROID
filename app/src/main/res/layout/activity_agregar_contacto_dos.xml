@@ -1,0 +1,207 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".AgregarContactoDos"
+    tools:layout_editor_absoluteX="1dp"
+    tools:layout_editor_absoluteY="15dp">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="16dp">
+
+            <!-- ... (todo tu código XML actual) ... -->
+
+
+            <TextView
+                android:id="@+id/idTituloFormulario"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="24dp"
+                android:layout_marginTop="36dp"
+                android:text="@string/TitleContacto"
+                android:textColor="#888888"
+                android:textSize="24sp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+
+            <TextView
+                android:id="@+id/id_Informacion"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="4dp"
+                android:text="@string/Texto2Contacto"
+                android:textColor="#888888"
+                android:textSize="16sp"
+                android:textStyle="italic"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/idTituloFormulario" />
+
+            <TextView
+                android:id="@+id/id_NivelEstudios"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="24dp"
+                android:layout_marginTop="12dp"
+                android:text="@string/NivelEstudios"
+                android:textColor="#888888"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/id_Informacion" />
+
+            <RadioGroup
+                android:id="@+id/radioGroup"
+                android:layout_width="327dp"
+                android:layout_height="244dp"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="12dp"
+                android:orientation="vertical"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/id_NivelEstudios">
+
+
+                <RadioButton
+                    android:id="@+id/radio_PrimarioIncompleto"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/RadioPrimarioIncompleto"
+                    app:layout_constraintStart_toStartOf="parent"
+                    tools:layout_editor_absoluteY="161dp" />
+
+                <RadioButton
+                    android:id="@+id/radio_PrimarioCompleto"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/RadioPrimarioCompleto"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/radio_PrimarioIncompleto" />
+
+                <RadioButton
+                    android:id="@+id/radio_SecundarioIncompleto"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/RadioSecundarioIncompleto"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/radio_SecundarioIncompleto" />
+
+                <RadioButton
+                    android:id="@+id/radio_SecundarioCompleto"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/RadioSecundarioCompleto"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/radio_SecundarioCompleto" />
+
+                <RadioButton
+                    android:id="@+id/radio_Otros"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/RadioOtros"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/radio_Otros" />
+
+            </RadioGroup>
+
+            <TextView
+                android:id="@+id/id_Intereses"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="24dp"
+                android:layout_marginTop="12dp"
+                android:text="@string/Intereses"
+                android:textColor="#888888"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/radioGroup" />
+
+            <TextView
+                android:id="@+id/lbl_Deseo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="16dp"
+                android:text="@string/Deseo"
+                android:textColor="#888888"
+                android:textSize="12sp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/checkArte" />
+
+            <CheckBox
+                android:id="@+id/check_Deportes"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="4dp"
+                android:text="@string/CheckDeporte"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/id_Intereses" />
+
+            <CheckBox
+                android:id="@+id/checkArte"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="12dp"
+                android:text="@string/CheckArte"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/check_Deportes" />
+
+            <CheckBox
+                android:id="@+id/check_Musica"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="88dp"
+                android:layout_marginTop="36dp"
+                android:text="@string/CheckMusica"
+                app:layout_constraintStart_toEndOf="@+id/check_Deportes"
+                app:layout_constraintTop_toBottomOf="@+id/radioGroup" />
+
+            <CheckBox
+                android:id="@+id/check_Tecnologia"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="120dp"
+                android:layout_marginTop="12dp"
+                android:text="@string/CheckTecnologia"
+                app:layout_constraintStart_toEndOf="@+id/checkArte"
+                app:layout_constraintTop_toBottomOf="@+id/check_Musica" />
+
+            <Switch
+                android:id="@+id/swt_Deseo"
+                android:layout_width="93dp"
+                android:layout_height="30dp"
+                android:layout_marginStart="24dp"
+                android:layout_marginTop="16dp"
+                android:text="@string/SplinnerSI"
+                app:layout_constraintStart_toEndOf="@+id/lbl_Deseo"
+                app:layout_constraintTop_toBottomOf="@+id/check_Tecnologia" />
+
+            <Button
+                android:id="@+id/btn_Guardar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:layout_marginEnd="156dp"
+                android:text="@string/btnGuardar"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/swt_Deseo" />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </ScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

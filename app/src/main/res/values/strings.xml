@@ -1,0 +1,44 @@
+<resources>
+        <string name="app_name">TP02-GRUPO9-ANDROID</string>
+        <string name="agContacto">Agregar Contacto</string>
+        <string name="lstContactos">Listar Contactos</string>
+
+        <!-- AGREGAR CONTACTOS -->
+        <string name="TitleContacto">FORMULARIO DE CONTACTOS</string>
+        <string name="TextoContacto">Este es un formulario destinado al registro \nde personas, sus datos personales e \nintereses. </string>
+        <string name="NombreContacto">Nombre</string>
+        <string name="ApellidoContacto">Apellido</string>
+        <string name="TelefonoContacto">Telefono</string>
+        <string name="EmailContacto">Email</string>
+        <string name="DireccionContacto">Direccion</string>
+        <string name="FechaNacimientoContacto">Fecha de Nacimiento</string>
+
+        <string name="CasaSplinner">Casa</string>
+        <string name="TrabajoSplinner">Trabajo</string>
+        <string name="MovilSplinner">Movil</string>
+
+        <string name="Texto2Contacto">A continuación, por favor se pide completar \nmás datos personales. </string>
+        <string name="RadioPrimarioIncompleto">Primario Incompleto</string>
+        <string name="RadioPrimarioCompleto">Primario Completo</string>
+        <string name="RadioSecundarioIncompleto">Secundario Incompleto</string>
+        <string name="RadioSecundarioCompleto">Secundario Completo</string>
+        <string name="RadioOtros">Otros</string>
+
+        <string name="CheckDeporte">Deportes</string>
+        <string name="CheckMusica">Musica</string>
+        <string name="CheckArte">Arte</string>
+        <string name="CheckTecnologia">Tecnologia</string>
+
+        <string name="SplinnerSI">SI</string>
+        <string name="SplinnerNO">NO</string>
+
+        <string name="btnContinuar">Continuar</string>
+        <string name="btnGuardar">Guardar</string>
+        <string name="btnVolver">Volver</string>
+
+        <string name="NivelEstudios">NIVEL DE ESTUDIOS ALCANZADOS </string>
+        <string name="Intereses">INTERESES </string>
+        <string name="Deseo">DESEA RECIBIR INFORMACION? </string>
+
+        <!-- LISTAR CONTACTOS -->
+</resources>
