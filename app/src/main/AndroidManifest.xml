@@ -13,6 +13,9 @@
         android:theme="@style/Theme.TP02GRUPO9ANDROID"
         tools:targetApi="31">
         <activity
+            android:name=".VerDetallesContacto"
+            android:exported="false" />
+        <activity
             android:name=".AgregarContactoDos"
             android:exported="false" />
         <activity
