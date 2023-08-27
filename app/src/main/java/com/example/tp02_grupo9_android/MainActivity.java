@@ -17,6 +17,24 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
     }
 
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.barranavegacion2, menu);
+        return super.onCreateOptionsMenu(menu);
+    }
+
+    @Override public boolean onOptionsItemSelected(MenuItem item){
+        int id = item.getItemId();
+        if(id == R.id.itemAgregar){
+            startActivity(new Intent(MainActivity.this, AgregarContacto.class));
+        }
+        if(id == R.id.itemListar){
+            startActivity(new Intent(MainActivity.this, VerContactos.class));
+        }
+
+        return super.onOptionsItemSelected(item);
+    }
+
     public void Ejercicio1(View view)
     {
         startActivity(new Intent(MainActivity.this, AgregarContacto.class));
@@ -28,21 +46,11 @@ public class MainActivity extends AppCompatActivity {
     }
 
 
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
+   /* @Override public boolean onCreateOptionsMenu(Menu menu) {
         getMenuInflater().inflate(R.menu.barranavegacion, menu);
-        return true;
-    }
+        Toast.makeText(this, "entro1", Toast.LENGTH_SHORT).show();
+        return super.onCreateOptionsMenu(menu);
+    }*/
 
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item){
-        int id = item.getItemId();
-        if(id == R.id.itemAgregar){
-            startActivity(new Intent(MainActivity.this, AgregarContacto.class));
-        }
-        if(id == R.id.itemListar){
-            startActivity(new Intent(MainActivity.this, VerContactos.class));
-        }
-        return super.onOptionsItemSelected(item);
-    }
+
 }

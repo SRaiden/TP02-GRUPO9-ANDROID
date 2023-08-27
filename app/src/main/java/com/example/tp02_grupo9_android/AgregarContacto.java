@@ -131,7 +131,7 @@ public class AgregarContacto extends AppCompatActivity {
                     return false;
                 }
                 else if (!isValidDate(fechaNacimiento)) {
-                    Toast.makeText(AgregarContacto.this, "Por favor, ingrese una fecha de nacimiento válida. En formato dd-MM-yyyy", Toast.LENGTH_LONG).show();
+                    Toast.makeText(AgregarContacto.this, "Por favor, ingrese una fecha de nacimiento válida. En formato DD-MM-YYYY", Toast.LENGTH_LONG).show();
                     return false;
                 }
                 else{
@@ -144,7 +144,7 @@ public class AgregarContacto extends AppCompatActivity {
             }
 
             private boolean isValidDate(String date) {
-                SimpleDateFormat dateFormat = new SimpleDateFormat("dd-MM-yyyy", Locale.getDefault());
+                SimpleDateFormat dateFormat = new SimpleDateFormat("DD-MM-YYYY", Locale.getDefault());
                 dateFormat.setLenient(false);
 
                 try {
