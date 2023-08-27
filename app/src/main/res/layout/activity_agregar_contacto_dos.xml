@@ -19,7 +19,6 @@
 
             <!-- ... (todo tu código XML actual) ... -->
 
-
             <TextView
                 android:id="@+id/idTituloFormulario"
                 android:layout_width="wrap_content"

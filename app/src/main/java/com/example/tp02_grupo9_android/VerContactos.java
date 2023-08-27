@@ -36,7 +36,7 @@ public class VerContactos extends AppCompatActivity {
         if(listaContactos != null){
             ArrayList<String> nombresYCorreos = new ArrayList<>();
             for (ContactoClass contacto : listaContactos) {
-                String nombreYCorreo = contacto.getNombre() + " - " + contacto.getEmail();
+                String nombreYCorreo = contacto.getNombre() + " " + contacto.getApellido() + " - " + contacto.getEmail();
                 nombresYCorreos.add(nombreYCorreo);
             }
 
