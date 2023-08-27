@@ -2,6 +2,7 @@
         <string name="app_name">TP02-GRUPO9-ANDROID</string>
         <string name="agContacto">Agregar Contacto</string>
         <string name="lstContactos">Listar Contactos</string>
+        <string name="mnPrincipal">Volver al Menu Principal</string>
 
         <!-- AGREGAR CONTACTOS -->
         <string name="TitleContacto">FORMULARIO DE CONTACTOS</string>
@@ -40,5 +41,6 @@
         <string name="Intereses">INTERESES </string>
         <string name="Deseo">DESEA RECIBIR INFORMACION? </string>
 
-        <!-- LISTAR CONTACTOS -->
+        <string name="titleIntegrantes">INTEGRANTES </string>
+        <string name="Alumnos">Natanael Gomez Carrizo\nAdriel Benjamin Lopez </string>
 </resources>

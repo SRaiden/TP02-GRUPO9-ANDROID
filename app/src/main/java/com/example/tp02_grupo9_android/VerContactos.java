@@ -4,6 +4,8 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
@@ -25,8 +27,39 @@ public class VerContactos extends AppCompatActivity {
 
         verContactos();
         setClickListener();
-        volver();
     }
+
+    //--------------------------------------------------------------//
+
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.barranavegacion2, menu);
+
+        // Como estoy en la misma activity oculto el item
+        MenuItem itemVerContactos = menu.findItem(R.id.itemListar);
+        itemVerContactos.setVisible(false);
+
+        return super.onCreateOptionsMenu(menu);
+    }
+
+    @Override public boolean onOptionsItemSelected(MenuItem item){
+        int id = item.getItemId();
+        if(id == R.id.itemAgregar){
+            startActivity(new Intent(VerContactos.this, AgregarContacto.class));
+        }
+        if(id == R.id.itemListar){
+            startActivity(new Intent(VerContactos.this, VerContactos.class));
+        }
+        if(id == R.id.itemMenuPrincipal){
+            startActivity(new Intent(VerContactos.this, MainActivity.class));
+        }
+
+        return super.onOptionsItemSelected(item);
+    }
+
+    //-------------------------------------------------------------//
+
 
     private void verContactos(){
         listViewContactos = findViewById(R.id.listViewContactos);
@@ -64,16 +97,4 @@ public class VerContactos extends AppCompatActivity {
         });
     }
 
-    private void volver(){
-        btnVolver = findViewById(R.id.btnVolver);
-
-        btnVolver.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                // Regresa al menú principal
-                Intent intent = new Intent(VerContactos.this, MainActivity.class);
-                startActivity(intent);
-            }
-        });
-    }
 }

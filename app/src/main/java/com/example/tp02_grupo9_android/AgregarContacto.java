@@ -4,6 +4,8 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
@@ -33,6 +35,36 @@ public class AgregarContacto extends AppCompatActivity {
         Inicializar();
         SetClickListener();
     }
+
+    //----------------------------------------------------------------------------------//
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.barranavegacion2, menu);
+
+        // Como estoy en la misma activity oculto el item
+        MenuItem itemAgregarContactos = menu.findItem(R.id.itemAgregar);
+        itemAgregarContactos.setVisible(false);
+
+        return super.onCreateOptionsMenu(menu);
+    }
+
+    @Override public boolean onOptionsItemSelected(MenuItem item){
+        int id = item.getItemId();
+        if(id == R.id.itemAgregar){
+            startActivity(new Intent(AgregarContacto.this, AgregarContacto.class));
+        }
+        if(id == R.id.itemListar){
+            startActivity(new Intent(AgregarContacto.this, VerContactos.class));
+        }
+        if(id == R.id.itemMenuPrincipal){
+            startActivity(new Intent(AgregarContacto.this, MainActivity.class));
+        }
+
+        return super.onOptionsItemSelected(item);
+    }
+
+    //----------------------------------------------------------------------------------//
 
     private void AgregarItemsSpinner(){
         Spinner spinnerTelefono = findViewById(R.id.spnTelefono);
@@ -80,7 +112,7 @@ public class AgregarContacto extends AppCompatActivity {
                 String emailSeleccionado = spnEmail.getSelectedItem().toString();
 
                 //validaciones
-                boolean val = validar(nombre, apellido, telefono, email, direccion, fechaNacimiento, telefonoSeleccionado, emailSeleccionado);
+                boolean val = validar(nombre, apellido, telefono, email, direccion, fechaNacimiento);
                 if(!val){
                     return;
                 }
@@ -111,7 +143,9 @@ public class AgregarContacto extends AppCompatActivity {
             }
 
             public boolean validar(String nombre, String apellido, String telefono, String email, String direccion,
-                                   String fechaNacimiento, String telefonoSeleccionado, String emailSeleccionado){
+                                   String fechaNacimiento){
+
+
 
                 if (nombre.isEmpty() || apellido.isEmpty() || telefono.isEmpty() || email.isEmpty() ||
                         direccion.isEmpty() || fechaNacimiento.isEmpty()) {
@@ -126,12 +160,16 @@ public class AgregarContacto extends AppCompatActivity {
                     Toast.makeText(AgregarContacto.this, "El campo de teléfono solo debe contener números.", Toast.LENGTH_LONG).show();
                     return false;
                 }
+                else if (telefono.length() < 8) {
+                    Toast.makeText(AgregarContacto.this, "El campo de teléfono tiene que tener mas de 8 caracteres.", Toast.LENGTH_LONG).show();
+                    return false;
+                }
                 else if (!isValidEmail(email)) {
                     Toast.makeText(AgregarContacto.this, "Por favor, ingrese un email válido.", Toast.LENGTH_LONG).show();
                     return false;
                 }
                 else if (!isValidDate(fechaNacimiento)) {
-                    Toast.makeText(AgregarContacto.this, "Por favor, ingrese una fecha de nacimiento válida. En formato DD-MM-YYYY", Toast.LENGTH_LONG).show();
+                    Toast.makeText(AgregarContacto.this, "Por favor, ingrese una fecha de nacimiento válida. En formato dd-MM-yyyy o dd/MM/yyyy", Toast.LENGTH_LONG).show();
                     return false;
                 }
                 else{
@@ -144,17 +182,24 @@ public class AgregarContacto extends AppCompatActivity {
             }
 
             private boolean isValidDate(String date) {
-                SimpleDateFormat dateFormat = new SimpleDateFormat("DD-MM-YYYY", Locale.getDefault());
+                SimpleDateFormat dateFormat = new SimpleDateFormat("dd-MM-yyyy", Locale.getDefault());
                 dateFormat.setLenient(false);
+
+                SimpleDateFormat dateFormat2 = new SimpleDateFormat("dd/MM/yyyy", Locale.getDefault());
+                dateFormat2.setLenient(false);
 
                 try {
                     dateFormat.parse(date);
                     return true;
                 } catch (ParseException e) {
-                    return false;
+                    try{
+                        dateFormat2.parse(date);
+                        return true;
+                    }catch (ParseException y){
+                        return false;
+                    }
                 }
             }
-
         });
     }
 }

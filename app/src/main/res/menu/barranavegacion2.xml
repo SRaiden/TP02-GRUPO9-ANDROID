@@ -4,6 +4,8 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".MainActivity.java">
 
+
+
     <item
         android:id="@+id/itemAgregar"
         android:title="@string/agContacto"/>
@@ -12,5 +14,8 @@
         android:id="@+id/itemListar"
         android:title="@string/lstContactos"/>
 
+    <item
+        android:id="@+id/itemMenuPrincipal"
+        android:title="@string/mnPrincipal"/>
 
 </menu>

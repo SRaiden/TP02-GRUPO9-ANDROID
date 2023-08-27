@@ -4,6 +4,8 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.CheckBox;
@@ -28,14 +30,43 @@ public class AgregarContactoDos extends AppCompatActivity {
         RecuperarInfoActivity();
         Inicializar();
 
-        // Obtener referencia al RadioGroup y al primer RadioButton
-        RadioGroup radioGroup = findViewById(R.id.radioGroup);
+        // Predeterminado que sea el primer RadioButton
         RadioButton primerRadioButton = findViewById(R.id.radio_PrimarioIncompleto);
         primerRadioButton.setChecked(true);
 
-
         SetClickListener();
     }
+
+    //--------------------------------------------------------------//
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.barranavegacion2, menu);
+
+        // Como estoy en la misma activity oculto el item
+        MenuItem itemAgregarContactos = menu.findItem(R.id.itemAgregar);
+        itemAgregarContactos.setVisible(false);
+
+        return super.onCreateOptionsMenu(menu);
+    }
+
+    @Override public boolean onOptionsItemSelected(MenuItem item){
+        int id = item.getItemId();
+        if(id == R.id.itemAgregar){
+            startActivity(new Intent(AgregarContactoDos.this, AgregarContacto.class));
+        }
+        if(id == R.id.itemListar){
+            startActivity(new Intent(AgregarContactoDos.this, VerContactos.class));
+        }
+        if(id == R.id.itemMenuPrincipal){
+            startActivity(new Intent(AgregarContactoDos.this, MainActivity.class));
+        }
+
+        return super.onOptionsItemSelected(item);
+    }
+
+    //-------------------------------------------------------------//
+
 
     private void RecuperarInfoActivity(){
         nuevoContacto = getIntent().getParcelableExtra("contacto");

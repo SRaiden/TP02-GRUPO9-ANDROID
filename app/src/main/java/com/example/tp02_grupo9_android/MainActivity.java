@@ -20,6 +20,12 @@ public class MainActivity extends AppCompatActivity {
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         getMenuInflater().inflate(R.menu.barranavegacion2, menu);
+
+        // Como estoy en la misma activity oculto el item
+        MenuItem itemMenuPrincipal = menu.findItem(R.id.itemMenuPrincipal);
+        itemMenuPrincipal.setVisible(false);
+
+
         return super.onCreateOptionsMenu(menu);
     }
 
@@ -31,20 +37,12 @@ public class MainActivity extends AppCompatActivity {
         if(id == R.id.itemListar){
             startActivity(new Intent(MainActivity.this, VerContactos.class));
         }
+        if(id == R.id.itemMenuPrincipal){
+            startActivity(new Intent(MainActivity.this, MainActivity.class));
+        }
 
         return super.onOptionsItemSelected(item);
     }
-
-    public void Ejercicio1(View view)
-    {
-        startActivity(new Intent(MainActivity.this, AgregarContacto.class));
-    }
-
-    public void Ejercicio2(View view)
-    {
-        startActivity(new Intent(MainActivity.this, VerContactos.class));
-    }
-
 
    /* @Override public boolean onCreateOptionsMenu(Menu menu) {
         getMenuInflater().inflate(R.menu.barranavegacion, menu);
